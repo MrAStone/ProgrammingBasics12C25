@@ -4,6 +4,21 @@ namespace ProgrammingBasics12C25
 {
     internal class Program
     {
+        struct Town
+        {
+            public string TownName;
+            public int Population;
+            public double Area;
+            public string County;
+
+            public Town(string name,int pop,double tArea,string tCounty)
+            {
+                this.TownName = name;
+                this.Population = pop;
+                this.Area = tArea;
+                this.County = tCounty;
+            }
+        }
         static void Main(string[] args)
         {
             // This is a comment
@@ -45,6 +60,41 @@ namespace ProgrammingBasics12C25
             Console.WriteLine(myDateTime.Minute);
             Console.WriteLine(myDateTime.Second);
             Console.WriteLine(myDateTime.Millisecond);
+
+            //pointer/reference
+            // not safe in C#
+            // int* ptr = &x;
+
+            // records
+            // structure are defined outside the main program
+            Town myTown = new Town();
+            myTown.TownName = "Heckmondwike";
+            myTown.Area = 35.4;
+            myTown.Population = 12;
+            myTown.County = "West Yorkshire";
+            Console.WriteLine(myTown.TownName);
+            Town anotherTown = new Town("Batley", 50, 12, "West Yorkshire");
+
+            // array
+            string[] words = { "this", "is", "an", "array", "of", "strings" };
+
+            int[] nums = new int[10];
+            nums[0] = 5;
+            nums[9] = 24;
+            // nums[10] = 30; index 10 does not exist
+
+            // variable declaration
+            // datatype identifier (= value)
+            int aNum = 42;
+            string aString;
+            // constant declaration
+            // const datatype identifier = value
+            const int theAnswer = 42;
+
+            // Assignment
+            // variable = value
+            aString = "I am assigning this value to a variable";
+
 
 
         }
