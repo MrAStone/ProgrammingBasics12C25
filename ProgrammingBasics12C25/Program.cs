@@ -11,7 +11,7 @@ namespace ProgrammingBasics12C25
             public double Area;
             public string County;
 
-            public Town(string name,int pop,double tArea,string tCounty)
+            public Town(string name, int pop, double tArea, string tCounty)
             {
                 this.TownName = name;
                 this.Population = pop;
@@ -61,6 +61,7 @@ namespace ProgrammingBasics12C25
             Console.WriteLine(myDateTime.Second);
             Console.WriteLine(myDateTime.Millisecond);
 
+
             //pointer/reference
             // not safe in C#
             // int* ptr = &x;
@@ -95,8 +96,80 @@ namespace ProgrammingBasics12C25
             // variable = value
             aString = "I am assigning this value to a variable";
 
+            // selection
+            // Uses if
+            // if(criteria){code}
+            if (aNum != 42)
+            {
+                Console.WriteLine("not 42");
+            }
+
+            if(aNum < 40)
+            {
+                Console.WriteLine("less than 40");
+            }
+            else
+            {
+                Console.WriteLine("Not less than 40");
+            }
+
+            if (aNum >= 50)
+            {
+                Console.WriteLine("Greater than or equal to 50");
+            }
+            else if(aNum < 30)
+            {
+                Console.WriteLine("less than 30");
+            }
+            else
+            {
+                Console.WriteLine("Between 30 and 50");
+            }
+
+            switch (aNum)
+            {
+                case 42:
+                    Console.WriteLine("42");
+                    break;
+                case 43:
+                    Console.WriteLine("43");
+                    break;
+                case > 50:
+                    Console.WriteLine("Over 50");
+                    break;
+                default:
+                    Console.WriteLine("None of the above");
+                    break;
+            }
+
+            bool isItTrue = true;
+            if (!isItTrue)
+            {
+                Console.WriteLine("no");
+            }
 
 
+            // iteration
+            // definite iteration
+
+            for(int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(i);
+            }
+            for(int i = 0; i < 10; i += 3)
+            {
+                Console.WriteLine(i);
+            }
+            for(int i = 10; i > 0; i--)
+            {
+                Console.WriteLine(i);
+            }
+
+            string test = "HELLO WORLD";
+            for(int i = 0; i < test.Length; i++)
+            {
+                Console.WriteLine(test[i]);
+            }
         }
     }
 }
