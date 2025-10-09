@@ -1,12 +1,5 @@
-// This line imports a "namespace" called System.Runtime.CompilerServices.
-// Namespaces are like libraries of pre-written code. You don't need to worry about this specific one for now.
-using System.Runtime.CompilerServices;
-
-// A "namespace" is used to organize your code. It's like a folder for your program's files.
 namespace ProgrammingBasics12C25
 {
-    // A "class" is a blueprint for creating objects. Think of it as a container for your code,
-    // holding variables and functions (called "methods").
     internal class Program
     {
         // A "struct" (short for structure) is a way to group several related variables into one place.
@@ -197,4 +190,119 @@ namespace ProgrammingBasics12C25
             // It has three parts:
             // 1. int i = 0;   (Initializer: Runs once at the very beginning)
             // 2. i < 10;       (Condition: Checked before each repetition. The loop continues as long as this is true)
-            // 3. i++          (Iterator: Runs at the end of each repetition. i++ means "add 1 to i
+            // 3. i++          (Iterator: Runs at the end of each repetition. i++ means "add 1 to i")
+            for (int i = 0; i < 10; i++)
+            {
+                // This will print the numbers 0 through 9.
+                Console.WriteLine(i);
+            }
+
+            // A for loop that counts up in steps of 3.
+            for (int i = 0; i < 10; i += 3) // i += 3 is shorthand for i = i + 3
+            {
+                // This will print 0, 3, 6, 9
+                Console.WriteLine(i);
+            }
+
+            // A for loop that counts down.
+            for (int i = 10; i > 0; i--) // i-- is shorthand for i = i - 1
+            {
+                // This will print 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
+                Console.WriteLine(i);
+            }
+
+            string test = "HELLO WORLD";
+            // You can use a loop to go through each character of a string.
+            // test.Length gives you the number of characters in the string.
+            for (int i = 0; i < test.Length; i++)
+            {
+                // test[i] gets the character at the current index 'i'.
+                Console.WriteLine(test[i]);
+            }
+            // This is another 'for' loop, but it's set up to go through the 'test' string backwards.
+            // 1. Initializer: int i = test.Length - 1;
+            //    Starts the counter 'i' at the index of the LAST character.
+            //    (If "HELLO" has length 5, its indexes are 0,1,2,3,4. The last index is Length - 1).
+            // 2. Condition: i >= 0;
+            //    The loop continues as long as 'i' is a valid index (greater than or equal to 0).
+            // 3. Iterator: i--
+            //    Decrements 'i' by 1 after each loop, moving backwards through the string.
+            for (int i = test.Length - 1; i >= 0; i--)
+            {
+                // Console.Write() is like Console.WriteLine(), but it DOESN'T add a new line at the end.
+                // This will print each character right next to the previous one, reversing the string.
+                Console.Write(test[i]);
+            }
+            // This prints an empty line to the console, just to move the cursor to the next line
+            // for any future output.
+            Console.WriteLine();
+
+            // The 'foreach' loop is a simpler way to go through every item in a collection (like an array or string).
+            // It reads as "for each character 'c' in the string 'test'...".
+            // The loop handles getting each item for you.
+            foreach (char c in test)
+            {
+                // This will print each character of the string on its own line.
+                Console.WriteLine(c);
+            }
+
+            // Here we declare an array of integers.
+            int[] arrayOfNums = { 36, 5, 4, 9, 11, 55, 88, 44, 32, 1 };
+            // A variable to store a running total, starting at 0.
+            int sum = 0;
+            // We use a 'foreach' loop to go through each number in our array.
+            foreach (int i in arrayOfNums)
+            {
+                // sum += i; is shorthand for sum = sum + i;
+                // It adds the current number ('i') to our running total ('sum').
+                sum += i;
+            }
+            // Here, we calculate the average.
+            // Dividing an integer by an integer in C# will discard the decimal part (e.g., 10 / 4 = 2).
+            // By multiplying arrayOfNums.Length by 1.0, we temporarily convert it to a 'double' (a decimal number).
+            // This forces the entire calculation to be done with decimals, giving a precise average.
+            Console.WriteLine(sum / (arrayOfNums.Length * 1.0));
+
+            // ## Nested Loops ##
+            // This is a 'for' loop inside another 'for' loop.
+            // The outer loop (with 'i') will run 10 times (for i = 0 to 9).
+            for (int i = 0; i < 10; i++)
+            {
+                // This line will print the current value of 'i' (0, then 1, then 2, etc.).
+                Console.WriteLine("Outer loop i: " + i);
+
+                // For EACH SINGLE RUN of the outer loop, this inner loop (with 'j') will run completely.
+                // It will run 10 times (for j = 0 to 9) before the outer loop moves to its next 'i' value.
+                for (int j = 0; j < 10; j++)
+                {
+                    // This will print the numbers 0-9, ten separate times.
+                    Console.WriteLine("  Inner loop j: " + j);
+                }
+            }
+
+            // ## Condition-Controlled Loops ## (Indefinite Iteration)
+            // These loops run as long as a condition is true, not for a fixed number of times.
+
+            // A 'while' loop checks its condition BEFORE running the code inside.
+            int x = 1;
+            while (x < 10) // "While x is less than 10..."
+            {
+                // If the condition is true, run this code.
+                x++; // Add 1 to x.
+            } // Then it goes back to the 'while' line to check the condition again.
+              // It stops when x becomes 10, because 10 is not less than 10.
+            Console.WriteLine(x); // Will print 10.
+
+            x = 1; // Reset x back to 1 for the next example.
+
+            // A 'do-while' loop runs the code inside ONCE, and then checks the condition.
+            // This guarantees the code inside the loop will run at least one time.
+            do
+            {
+                // This code runs first.
+                x++; // Add 1 to x.
+            } while (x < 10); // Then it checks the condition: "Continue as long as x is less than 10".
+            Console.WriteLine(x); // Will also print 10.
+        } 
+    } 
+} 
